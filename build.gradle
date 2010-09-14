@@ -1,0 +1,28 @@
+apply plugin: 'java'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile ('org.codehaus.xfire:xfire-jaxws:1.2.6'){
+		exclude module: 'XmlSchema'
+		
+		exclude module: 'spring'
+		exclude module: 'junit'
+		exclude module: 'ant'
+		exclude module: 'xjavadoc'
+		exclude module: 'quartz'
+		exclude module: 'jstl'
+		exclude module: 'standard'
+		exclude module: 'mail'
+	}
+}
+
+task listJars << {
+	configurations.runtime.each { File f -> println f.name }
+}
+
+task init(description: 'creates default project structure') << {
+	sourceSets.all*.java.srcDirs*.each { it.mkdirs() }	
+}

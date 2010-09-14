@@ -1,0 +1,26 @@
+<ivy-module version="1.0">
+    <info 
+        organisation="ivytest"
+        module="ivytest"
+        status="integration">
+	</info>
+	
+	<dependencies>
+		<dependency org="org.codehaus.xfire" name="xfire-jaxws" rev="1.2.6" conf="*->runtime" >
+			<exclude module="spring" />
+			<exclude module="junit" />
+			<exclude module="ant" />
+			<exclude module="xjavadoc" />
+			<exclude module="quartz" />
+			<exclude module="jstl" />
+			<exclude module="standard" />
+			<exclude module="mail" />
+			
+			<exclude module="icu4j" />
+			<exclude module="easymock" />
+			<exclude module="servlet-api" />
+			<exclude module="tagsoup" />
+			<exclude module="xom" />
+		</dependency>
+	</dependencies>
+</ivy-module>	
